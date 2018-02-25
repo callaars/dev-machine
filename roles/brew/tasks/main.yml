@@ -1,0 +1,37 @@
+---
+- name: Update brew daily
+  cron: name="brew autoupdate" special_time="daily"
+        job="/usr/local/bin/brew update"
+
+- name: Cleanup brew
+  cron: name="brew cleanup" special_time="monthly"
+        job="/usr/local/bin/brew cleanup"
+
+- name: Install packages from Homebrew
+  homebrew: name={{ item }} state=present
+  with_items:
+    - nvm
+    - tree
+    - python
+    - python3
+    - speedtest_cli
+    - ruby-build
+    - rbenv
+    - neovim
+
+- name: Install packages from Homebrew Cask
+  ignore_errors: yes
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - google-chrome
+    - iterm2
+    - sketch
+    - skype
+    - zoomus
+    - dropbox
+    - gimp
+    - private-internet-access
+    - docker
+    - slack
+    - keybase
+    - flux

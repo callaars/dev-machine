@@ -1,0 +1,15 @@
+---
+
+- name: Create Git configs
+  git_config: scope=global name={{ item.name }} value={{ item.value }}
+  with_items:
+    - { name: 'user.signingkey', value: '76C3E0077669510FECE478CFCCC70AC89357D6D4' }
+    - { name: 'user.name', value: 'Joseph Callaars' }
+    - { name: 'user.email', value: 'joseph@callaa.rs' }
+    - { name: 'commit.gpgsign', value: true }
+    - { name: 'core.editor', value: 'nvim' }
+    - { name: 'core.whitespace', value: 'fix,-indent-with-non-tab,trailing-space,cr-at-eol' }
+    - { name: 'core.excludesfile', value: '.gitignore' }
+    - { name: 'web.browser', value: 'google-chrome' }
+    - { name: 'push.default', value: 'matching' }
+    - { name: 'color.ui', value: 'auto' }

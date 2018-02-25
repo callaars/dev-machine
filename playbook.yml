@@ -1,0 +1,18 @@
+---
+
+- hosts: localhost
+  vars:
+    home: /Users/joseph
+    user: joseph
+    gpg_private_key: |
+      -----BEGIN PGP PRIVATE KEY BLOCK-----
+      -----END PGP PRIVATE KEY BLOCK-----
+
+    gpg_public_key: |
+      -----BEGIN PGP PUBLIC KEY BLOCK-----
+      -----END PGP PUBLIC KEY BLOCK-----
+  user: joseph
+  roles:
+    - brew
+    - dev
+    - gpg

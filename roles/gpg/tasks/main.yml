@@ -1,0 +1,31 @@
+---
+
+- name: GPG create temporary files
+  copy:
+    content: "{{ item.content }}"
+    dest: "{{ home }}/.gnupg/{{ item.name }}.key"
+    owner: "{{ user }}"
+    mode: 0600
+  with_items:
+    - { name: pub, content: "{{ gpg_public_key }}"}
+    - { name: priv, content: "{{ gpg_private_key }}"}
+  
+- name: GPG import private key
+  command: "gpg --import {{ home }}/.gnupg/priv.key"
+  args:
+    creates: "{{ home }}/.gnupg/secring.gpg"
+
+- name: GPG import public key
+  command: "gpg --import {{ home }}/.gnupg/pub.key"
+  args:
+    creates: "{{ home }}/.gnupg/trustdb.gpg"
+
+- name: GPG delete temporary private key
+  file:
+    state: absent
+    path: "{{ home }}/.gnupg/priv.key"
+
+- name: GPG delete temporary public key
+  file:
+    state: absent
+    path: "{{ home }}/.gnupg/pub.key"
