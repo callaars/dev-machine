@@ -13,3 +13,9 @@
     - nvm install {{ node_version }}
     - nvm alias default {{ node_version }}
   tags: nvm
+
+- name: Install NPM packages
+  npm: name={{ item }} state=present global=yes
+  with_items:
+    - standard
+    - nodemon
