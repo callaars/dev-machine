@@ -53,3 +53,20 @@
       ip: "curl icanhazip.com"
       ls: "exa -abghl -L 3 --group-directories-first"
       l: "ls"
+
+- name: Empty existing tmux config
+  copy:
+    content: ""
+    dest: ~/.tmux.conf
+    force: true
+
+- name: Create tmux config
+  lineinfile: dest=~/.tmux.conf line='{{ item }}'
+  with_items:
+    - 'set -g status off'
+    - 'set-window-option -g mode-keys vi'
+    - 'set -ga terminal-overrides ",st-256color:Tc"'
+    - 'set -s escape-time 0'
+    - 'unbind C-b'
+    - 'set -g prefix C-a'
+    - 'bind C-a send-prefix'
