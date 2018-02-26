@@ -1,0 +1,11 @@
+---
+
+- name: SSH create keys
+  copy:
+    content: "{{ item.content }}"
+    dest: "{{ home }}/.ssh/{{ item.name }}"
+    owner: "{{ user }}"
+    mode: 0600
+  with_items:
+    - { name: "id_rsa.pub", content: "{{ ssh_public_key }}"}
+    - { name: "id_rsa", content: "{{ ssh_private_key }}"}

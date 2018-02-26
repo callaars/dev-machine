@@ -1,0 +1,15 @@
+---
+
+- name: Source nvm in ~/.profile
+  lineinfile: >
+    dest=~/.profile
+    line="source ~/.nvm/nvm.sh"
+    create=yes
+  tags: nvm
+
+- name: Install {{ node_version }}
+  command: bash -c 'source ~/.nvm/nvm.sh; {{ item }} '
+  with_items:
+    - nvm install {{ node_version }}
+    - nvm alias default {{ node_version }}
+  tags: nvm

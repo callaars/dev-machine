@@ -4,10 +4,15 @@
   vars:
     home: /Users/joseph
     user: joseph
+    node_version: 6
+    ssh_private_key: |
+      -----BEGIN RSA PRIVATE KEY-----
+      -----END RSA PRIVATE KEY-----
+    ssh_public_key: |
+      some-public-key
     gpg_private_key: |
       -----BEGIN PGP PRIVATE KEY BLOCK-----
       -----END PGP PRIVATE KEY BLOCK-----
-
     gpg_public_key: |
       -----BEGIN PGP PUBLIC KEY BLOCK-----
       -----END PGP PUBLIC KEY BLOCK-----
@@ -16,3 +21,5 @@
     - brew
     - dev
     - gpg
+    - ssh
+    - node
