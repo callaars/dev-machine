@@ -18,6 +18,8 @@
     - ruby-build
     - rbenv
     - neovim
+    - tmux
+    - gnupg
 
 - name: Install packages from Homebrew Cask
   ignore_errors: yes
@@ -35,3 +37,7 @@
     - slack
     - keybase
     - flux
+    - karabiner-elements
+    - bartender
+    - kap
+    - whatsapp
