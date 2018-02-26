@@ -9,7 +9,7 @@
       -----BEGIN RSA PRIVATE KEY-----
       -----END RSA PRIVATE KEY-----
     ssh_public_key: |
-      some-public-key
+      public-key
     gpg_private_key: |
       -----BEGIN PGP PRIVATE KEY BLOCK-----
       -----END PGP PRIVATE KEY BLOCK-----
@@ -23,3 +23,4 @@
     - gpg
     - ssh
     - node
+    - dotfiles

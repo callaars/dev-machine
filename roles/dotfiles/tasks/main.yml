@@ -1,0 +1,55 @@
+
+- name: Set cron shell
+  cron: name=SHELL env=yes value=/bin/zsh
+
+- name: Empty existing ZSH config
+  copy:
+    content: ""
+    dest: ~/.zshrc
+    force: true
+
+- name: ZSH config
+  lineinfile: dest=~/.zshrc line='{{ item }}'
+  with_items:
+    - 'HISTFILE=/dev/null'
+    - "source $(brew --prefix)/share/antigen/antigen.zsh"
+    - "antigen bundle zsh-users/zsh-syntax-highlighting"
+    - "antigen bundle zsh-users/zsh-autosuggestions"
+    - "antigen theme refined"
+    - "antigen bundle git"
+    - "antigen apply"
+    - "export EDITOR=nvim"
+    - 'COMPLETION_WAITING_DOTS="true"'
+
+- name: Make sure PIP is installed
+  become: true
+  become_user: "root"
+  easy_install: name=pip state=latest
+  ignore_errors: yes
+
+- name: Prepare Neovim directories
+  file: path=~/.config/nvim/bundle state=directory
+
+- name: Copy Neovim configuration
+  copy:
+    src: "{{ playbook_dir }}/dotfiles/init.vim"
+    dest: ~/.config/nvim/init.vim
+
+- name: Install Vundle for Neovim
+  git:
+    repo: 'https://github.com/VundleVim/Vundle.vim.git'
+    dest: ~/.config/nvim/bundle/Vundle.vim
+
+- name: Create aliases
+  lineinfile: dest=~/.zshrc line='alias {{ item.key }}=\"{{ item.value }}\"'
+  with_dict: "{{ aliases }}"
+  vars:
+    aliases:
+      findinfiles: "grep --exclude-dir={node_modules,.git,dist,build} -irn \".\" -e"
+      docker_clean_images: 'docker rmi \$(docker images -a --filter=dangling=true -q) --force'
+      docker_clean_containers: 'docker rm -v \$(docker ps -a -q -f status=exited)'
+      docker_clean_volumes: 'docker volume rm \$(docker volume ls -qf dangling=true)'
+      docker_clean: docker_clean_images; docker_clean_containers; docker_clean_volumes
+      ip: "curl icanhazip.com"
+      ls: "exa -abghl -L 3 --group-directories-first"
+      l: "ls"

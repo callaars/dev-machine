@@ -20,6 +20,9 @@
     - neovim
     - tmux
     - gnupg
+    - antigen
+    - heroku
+    - exa
 
 - name: Install packages from Homebrew Cask
   ignore_errors: yes
@@ -35,7 +38,6 @@
     - private-internet-access
     - docker
     - slack
-    - keybase
     - flux
     - karabiner-elements
     - bartender
