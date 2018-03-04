@@ -9,7 +9,7 @@
       -----BEGIN RSA PRIVATE KEY-----
       -----END RSA PRIVATE KEY-----
     ssh_public_key: |
-      public-key
+      ssh-rsa public key
     gpg_private_key: |
       -----BEGIN PGP PRIVATE KEY BLOCK-----
       -----END PGP PRIVATE KEY BLOCK-----
@@ -24,3 +24,7 @@
     - ssh
     - node
     - dotfiles
+    - { role: rvm_io.ruby,
+        tags: ruby,
+        rvm1_rubies: ['ruby-2.4.3'],
+        rvm1_user: 'joseph'}
