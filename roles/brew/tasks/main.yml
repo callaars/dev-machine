@@ -21,6 +21,7 @@
     - antigen
     - heroku
     - exa
+    - postgresql
 
 - name: Install packages from Homebrew Cask
   ignore_errors: yes
