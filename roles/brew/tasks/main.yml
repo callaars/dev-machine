@@ -15,8 +15,6 @@
     - python
     - python3
     - speedtest_cli
-    - ruby-build
-    - rbenv
     - neovim
     - tmux
     - gnupg
@@ -44,3 +42,4 @@
     - kap
     - whatsapp
     - switchresx
+    - pgadmin4
