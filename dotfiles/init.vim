@@ -472,9 +472,8 @@ let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 
-" Get copy/paste in through xclip and <C-c> and <C-v>
-vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
-nmap <C-v> :call setreg("\"", system("xclip -o -selection clipboard"))<CR>p
+" Get copy/paste in through <C-c>
+set clipboard=unnamed
 
 set mouse=
 
