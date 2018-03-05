@@ -18,6 +18,7 @@
     - neovim
     - tmux
     - gnupg
+    - pinentry-mac
     - antigen
     - heroku
     - exa

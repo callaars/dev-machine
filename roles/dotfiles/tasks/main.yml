@@ -70,3 +70,9 @@
     - 'unbind C-b'
     - 'set -g prefix C-a'
     - 'bind C-a send-prefix'
+
+- name: Create gpg-agent config
+  copy:
+    dest: ~/.gnupg/gpg-agent.conf
+    content: "pinentry-program /usr/local/bin/pinentry-mac"
+    force: true
