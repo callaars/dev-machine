@@ -13,7 +13,6 @@
     - nvm
     - tree
     - python
-    - python3
     - speedtest_cli
     - neovim
     - tmux
