@@ -1,8 +1,8 @@
 ---
 
-- name: Source nvm in ~/.profile
+- name: source nvm in ~/.zprofile
   lineinfile: >
-    dest=~/.profile
+    dest=~/.zprofile
     line="source ~/.nvm/nvm.sh"
     create=yes
   tags: nvm
