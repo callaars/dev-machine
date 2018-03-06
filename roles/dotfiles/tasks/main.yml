@@ -17,6 +17,7 @@
     - "antigen bundle zsh-users/zsh-autosuggestions"
     - "antigen theme refined"
     - "antigen bundle git"
+    - "antigen bundle docker"
     - "antigen apply"
     - "export EDITOR=nvim"
     - 'COMPLETION_WAITING_DOTS="true"'
