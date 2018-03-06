@@ -12,7 +12,7 @@
   with_items:
     - nvm
     - tree
-    - python
+    - python2
     - speedtest_cli
     - neovim
     - tmux

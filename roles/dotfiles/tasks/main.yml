@@ -12,6 +12,7 @@
   lineinfile: dest=~/.zshrc line='{{ item }}'
   with_items:
     - 'HISTFILE=/dev/null'
+    - 'export PATH="/usr/local/opt/python@2/bin:$PATH"'
     - 'ZSH_TMUX_AUTOSTART=true'
     - "source $(brew --prefix)/share/antigen/antigen.zsh"
     - "antigen bundle zsh-users/zsh-syntax-highlighting"
