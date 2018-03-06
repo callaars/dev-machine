@@ -12,12 +12,16 @@
   lineinfile: dest=~/.zshrc line='{{ item }}'
   with_items:
     - 'HISTFILE=/dev/null'
+    - 'ZSH_TMUX_AUTOSTART=true'
     - "source $(brew --prefix)/share/antigen/antigen.zsh"
     - "antigen bundle zsh-users/zsh-syntax-highlighting"
     - "antigen bundle zsh-users/zsh-autosuggestions"
     - "antigen theme refined"
     - "antigen bundle git"
     - "antigen bundle docker"
+    - "antigen bundle tmux"
+    - "antigen bundle vi-mode"
+    - "antigen bundle urltools"
     - "antigen apply"
     - "export EDITOR=nvim"
     - 'COMPLETION_WAITING_DOTS="true"'
