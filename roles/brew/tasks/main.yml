@@ -22,6 +22,7 @@
     - heroku
     - exa
     - postgresql
+    - docker
     - docker-compose
 
 - name: Install packages from Homebrew Cask
@@ -35,7 +36,6 @@
     - dropbox
     - gimp
     - private-internet-access
-    - docker
     - slack
     - flux
     - karabiner-elements
