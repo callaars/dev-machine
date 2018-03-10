@@ -59,6 +59,8 @@
       ip: "curl icanhazip.com"
       ls: "exa -abghl -L 3 --group-directories-first"
       l: "ls"
+      start_redis: "redis-server /usr/local/etc/redis.conf"
+      start_postgresql: "pg_ctl -D /usr/local/var/postgres start"
 
 - name: Empty existing tmux config
   copy:
