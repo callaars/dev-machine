@@ -21,9 +21,11 @@
     - antigen
     - heroku
     - exa
-    - postgresql
     - docker
     - docker-compose
+    - postgresql
+    - redis
+    - phantomjs
 
 - name: Install packages from Homebrew Cask
   ignore_errors: yes
