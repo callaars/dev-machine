@@ -14,6 +14,7 @@
     - 'HISTFILE=/dev/null'
     - 'export PATH="/usr/local/opt/python@2/bin:$PATH"'
     - 'ZSH_TMUX_AUTOSTART=true'
+    - 'ZSH_TMUX_AUTOQUIT=false'
     - "source $(brew --prefix)/share/antigen/antigen.zsh"
     - "antigen bundle zsh-users/zsh-syntax-highlighting"
     - "antigen bundle zsh-users/zsh-autosuggestions"
