@@ -27,6 +27,7 @@
     - "antigen apply"
     - "export EDITOR=nvim"
     - 'COMPLETION_WAITING_DOTS="true"'
+    - 'find ~/Source -type d -name node_modules -maxdepth 4 -exec tmutil addexclusion {} \;'
 
 - name: Make sure PIP is installed
   become: true
