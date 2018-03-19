@@ -19,3 +19,6 @@
   with_items:
     - standard
     - nodemon
+    - typescript
+    - tslint
+    - source-map-explorer

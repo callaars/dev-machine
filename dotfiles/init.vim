@@ -118,6 +118,7 @@ set termguicolors
     autocmd BufRead,BufNewFile *.go set filetype=go
     autocmd BufNewFile,BufRead *.jade set filetype=pug
     autocmd BufNewFile,BufRead *.ts set filetype=typescript
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescript
     autocmd BufNewFile,BufRead *.vue set filetype=vue
 
     autocmd BufNewFile,BufRead *.php set filetype=php noexpandtab
