@@ -27,6 +27,7 @@
     - redis
     - phantomjs
     - ghostscript
+    - awscli
 
 - name: Install packages from Homebrew Cask
   ignore_errors: yes
