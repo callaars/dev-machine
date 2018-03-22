@@ -135,17 +135,12 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'posva/vim-vue'
-
-" Python scratch pad
-" Plugin 'metakirby5/codi.vim'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'godlygeek/tabular'
 
 " Better JS syntax highlighter
 Plugin 'othree/yajs.vim'
@@ -168,7 +163,11 @@ Plugin 'ternjs/tern_for_vim'
 " Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'Gummybears'
 
-Plugin 'fatih/vim-go'
+" Plugin 'fatih/vim-go'
+
+" Ruby
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
 
 " Enable JSX as well for the js files
 let g:jsx_ext_required = 0
@@ -191,9 +190,15 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " let g:syntastic_javascript_checkers = ['standard', 'babel-eslint']
 let g:syntastic_typescript_checkers = ['tslint']
+let g:syntastic_typescript_tsc_fname = ''
 
 let g:syntastic_javascript_checkers = []
 autocmd FileType javascript let b:syntastic_checkers = findfile('.eslintrc.js', '.;') !=# '' ? ['eslint'] : ['standard']
+
+" Ruby autocompletion settings
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " Syntax highlighting
 syntax on
