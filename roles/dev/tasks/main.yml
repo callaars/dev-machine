@@ -11,5 +11,5 @@
     - { name: 'core.whitespace', value: 'fix,-indent-with-non-tab,trailing-space,cr-at-eol' }
     - { name: 'core.excludesfile', value: '.gitignore' }
     - { name: 'web.browser', value: 'google-chrome' }
-    - { name: 'push.default', value: 'simple' }
+    - { name: 'push.default', value: 'nothing' }
     - { name: 'color.ui', value: 'auto' }
