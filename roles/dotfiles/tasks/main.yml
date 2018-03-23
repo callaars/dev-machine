@@ -63,7 +63,10 @@
       l: "ls"
       start_redis: "redis-server /usr/local/etc/redis.conf"
       start_postgresql: "pg_ctl -D /usr/local/var/postgres start"
-      cleanup: "git clean -fxd"
+      clean: "git clean -fxd"
+      "..": "cd .."
+      "...": "cd ..; cd .."
+      "....": "cd ..; cd ..; cd .."
 
 - name: Empty existing tmux config
   copy:
