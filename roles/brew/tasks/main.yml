@@ -28,6 +28,7 @@
     - phantomjs
     - ghostscript
     - ctags
+    - neovim
     - awscli
 
 - name: Install packages from Homebrew Cask
