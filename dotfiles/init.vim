@@ -154,6 +154,7 @@ Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Raimondi/delimitMate'
+Plugin 'ervandew/supertab'
 
 " Code completion
 Plugin 'Valloric/YouCompleteMe'
