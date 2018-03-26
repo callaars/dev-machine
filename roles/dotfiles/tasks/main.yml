@@ -69,6 +69,7 @@
       "..": "cd .."
       "...": "cd ..; cd .."
       "....": "cd ..; cd ..; cd .."
+      google: "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
 - name: Empty existing tmux config
   copy:

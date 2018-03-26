@@ -10,6 +10,6 @@
     - { name: 'core.editor', value: 'nvim' }
     - { name: 'core.whitespace', value: 'fix,-indent-with-non-tab,trailing-space,cr-at-eol' }
     - { name: 'core.excludesfile', value: '.gitignore' }
-    - { name: 'web.browser', value: 'google-chrome' }
+    - { name: 'web.browser', value: 'google' }
     - { name: 'push.default', value: 'nothing' }
     - { name: 'color.ui', value: 'auto' }
