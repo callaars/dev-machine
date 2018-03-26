@@ -27,6 +27,7 @@
     - redis
     - phantomjs
     - ghostscript
+    - ctags
     - awscli
 
 - name: Install packages from Homebrew Cask
