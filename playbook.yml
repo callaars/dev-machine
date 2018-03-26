@@ -26,5 +26,7 @@
     - dotfiles
     - { role: rvm_io.ruby,
         tags: ruby,
-        rvm1_rubies: ['ruby-2.4.3'],
-        rvm1_user: 'joseph'}
+        rvm1_rubies: ['ruby-2.3.0'],
+        rvm1_user: 'joseph'
+      }
+    - ruby

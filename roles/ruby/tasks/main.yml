@@ -1,0 +1,14 @@
+---
+
+- name: Install necessary gems
+  command: gem install {{ item }}
+  with_items:
+    - neovim
+    - interactive_editor
+  tags: nvm
+
+- name: Set up interactive irb
+  lineinfile: dest=~/.irbrc line='{{ item }}'
+  with_items:
+    - 'require "rubygems"'
+    - 'require "interactive_editor"'
