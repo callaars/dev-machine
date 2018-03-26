@@ -64,6 +64,8 @@
       start_redis: "redis-server /usr/local/etc/redis.conf"
       start_postgresql: "pg_ctl -D /usr/local/var/postgres start"
       clean: "git clean -fxd"
+      ctags: "`brew --prefix`/bin/ctags"
+      add_ctags: "ctags -R --exclude=.git --exclude=node_modules --exclude=log *"
       "..": "cd .."
       "...": "cd ..; cd .."
       "....": "cd ..; cd ..; cd .."
