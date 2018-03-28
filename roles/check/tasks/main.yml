@@ -1,0 +1,14 @@
+---
+
+- fail:
+    msg: "Variable '{{ item.key }}' not defined"
+  when: item.value | trim == ""
+  with_dict: "{{ aliases }}"
+  vars:
+    aliases:
+      ruby: "{{ default_ruby }}"
+      node: "{{ node_version }}"
+      ssh_private: "{{ ssh_private_key }}"
+      ssh_public: "{{ ssh_public_key }}"
+      gpg_public: "{{ gpg_public_key }}"
+      gpg_private: "{{ gpg_private_key }}"

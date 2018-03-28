@@ -1,14 +1,34 @@
 ---
 
+- name: Install required Ruby
+  command: rbenv install {{ default_ruby }}
+
+- name: Set default Ruby
+  command: rbenv global {{ default_ruby }}
+
 - name: Install necessary gems
   command: gem install {{ item }}
   with_items:
+    - bundler
     - neovim
     - interactive_editor
-  tags: nvm
+
+- name: Rehash Ruby
+  command: rbenv rehash
+
+- name: Create gem config
+  copy:
+    content: |
+      install: --no-ri --no-rdoc
+      update: --no-ri --no-rdoc
+
+    dest: ~/.gemrc
+    force: true
 
 - name: Set up interactive irb
-  lineinfile: dest=~/.irbrc line='{{ item }}'
-  with_items:
-    - 'require "rubygems"'
-    - 'require "interactive_editor"'
+  copy:
+    content: |
+      require "rubygems"
+      require "interactive_editor"
+    dest: ~/.irbrc
+    force: true

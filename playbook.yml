@@ -2,31 +2,21 @@
 
 - hosts: localhost
   vars:
-    home: /Users/joseph
-    user: joseph
-    node_version: 6
-    ssh_private_key: |
-      -----BEGIN RSA PRIVATE KEY-----
-      -----END RSA PRIVATE KEY-----
-    ssh_public_key: |
-      ssh-rsa public key
-    gpg_private_key: |
-      -----BEGIN PGP PRIVATE KEY BLOCK-----
-      -----END PGP PRIVATE KEY BLOCK-----
-    gpg_public_key: |
-      -----BEGIN PGP PUBLIC KEY BLOCK-----
-      -----END PGP PUBLIC KEY BLOCK-----
-  user: joseph
+    home: "/Users/{{ lookup('env', 'USER') }}"
+    user: "{{ lookup('env', 'USER' )}}"
+    default_ruby: "{{ lookup('env', 'ANSIBLE_DEFAULT_RUBY') }}"
+    node_version: "{{ lookup('env', 'ANSIBLE_DEFAULT_NODE') }}"
+    ssh_private_key: "{{ lookup('env', 'ANSIBLE_SSH_PRIVATE_KEY') }}"
+    ssh_public_key:  "{{ lookup('env', 'ANSIBLE_SSH_PUBLIC_KEY') }}"
+    gpg_private_key: "{{ lookup('env', 'ANSIBLE_GPG_PRIVATE_KEY') }}"
+    gpg_public_key: "{{ lookup('env', 'ANSIBLE_GPG_PUBLIC_KEY') }}"
+  user: "{{ lookup('env', 'USER' )}}"
   roles:
+    - check
     - brew
     - dev
     - gpg
     - ssh
     - node
     - dotfiles
-    - { role: rvm_io.ruby,
-        tags: ruby,
-        rvm1_rubies: ['ruby-2.3.0'],
-        rvm1_user: 'joseph'
-      }
     - ruby

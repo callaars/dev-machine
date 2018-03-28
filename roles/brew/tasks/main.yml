@@ -30,6 +30,7 @@
     - ctags
     - neovim
     - awscli
+    - rbenv
 
 - name: Install packages from Homebrew Cask
   ignore_errors: yes
