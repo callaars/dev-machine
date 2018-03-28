@@ -169,7 +169,6 @@ Plugin 'Gummybears'
 " Ruby
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rvm'
 
 " Enable JSX as well for the js files
 let g:jsx_ext_required = 0
@@ -201,7 +200,7 @@ autocmd FileType javascript let b:syntastic_checkers = findfile('.eslintrc.js', 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby autocmd BufEnter * Rvm
+autocmd FileType ruby compiler ruby
 
 set tags=./tags;
 
