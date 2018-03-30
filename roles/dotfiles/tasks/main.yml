@@ -71,6 +71,7 @@
       "...": "cd ..; cd .."
       "....": "cd ..; cd ..; cd .."
       google: "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+      irb: "irb --simple-prompt"
 
 - name: Empty existing tmux config
   copy:
