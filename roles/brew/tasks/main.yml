@@ -41,8 +41,6 @@
   with_items:
     - google-chrome
     - iterm2
-    - dropbox
-    - gimp
     - private-internet-access
     - vlc
     - vlc-webplugin
