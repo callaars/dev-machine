@@ -7,6 +7,9 @@
   cron: name="brew cleanup" special_time="monthly"
         job="/usr/local/bin/brew cleanup"
 
+- name: Install cask
+  command: brew tap caskroom/cask
+
 - name: Install packages from Homebrew
   homebrew: name={{ item }} state=present
   with_items:
@@ -38,8 +41,6 @@
   with_items:
     - google-chrome
     - iterm2
-    - skype
-    - zoomus
     - dropbox
     - gimp
     - private-internet-access
