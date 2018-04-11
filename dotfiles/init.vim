@@ -141,6 +141,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
 
 " Better JS syntax highlighter
 Plugin 'othree/yajs.vim'
@@ -228,7 +229,9 @@ endfunction
 command! W call CustomStripWhitespace()
 
 " Open up the netrw explorer if the key is pressed
-noremap <leader>e :Explore<CR>
+noremap <leader>e :NERDTreeToggle<CR>
+noremap <leader>w :NERDTreeFind<CR>
+autocmd vimenter * NERDTree
 
 " For the sake of learning to get rid of bad habits
 noremap <Up> <NOP>
