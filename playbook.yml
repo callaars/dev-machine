@@ -17,6 +17,11 @@
     - dev
     - gpg
     - ssh
+    - role: nvm
+      nvm: 
+        user: "{{ user }}"
+        version: HEAD
+        node_version: 8
     - node
     - dotfiles
     - ruby

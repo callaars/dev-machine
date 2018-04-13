@@ -1,5 +1,12 @@
 ---
 
+- name: Create .gnupg directories
+  file:
+    path: ~/.gnupg
+    state: directory
+    owner: "{{ user }}"
+    mode: 0700
+
 - name: GPG create temporary files
   copy:
     content: "{{ item.content }}"

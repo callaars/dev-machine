@@ -1,5 +1,12 @@
 ---
 
+- name: Create .ssh directory
+  file:
+    path: ~/.ssh
+    state: directory
+    owner: "{{ user }}"
+    mode: 0700
+
 - name: SSH create keys
   copy:
     content: "{{ item.content }}"
@@ -9,3 +16,12 @@
   with_items:
     - { name: "id_rsa.pub", content: "{{ ssh_public_key }}"}
     - { name: "id_rsa", content: "{{ ssh_private_key }}"}
+
+- name: Create SSH config
+  copy:
+    content: |
+      Host *
+        UseKeychain yes
+    dest: "{{ home }}/.ssh/config"
+    owner: "{{ user }}"
+    mode: 0600
