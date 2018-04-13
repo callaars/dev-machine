@@ -33,6 +33,7 @@
     - neovim
     - awscli
     - rbenv
+    - zeromq
 
 - name: Install packages from Homebrew Cask
   ignore_errors: yes
@@ -46,8 +47,6 @@
     - slack
     - flux
     - karabiner-elements
-    - vanilla
     - kap
     - whatsapp
-    - switchresx
     - pgadmin4
