@@ -168,6 +168,7 @@ Plugin 'Gummybears'
 " Plugin 'fatih/vim-go'
 
 " Ruby
+Plugin 'tpope/vim-rbenv'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 
@@ -200,7 +201,7 @@ autocmd FileType javascript let b:syntastic_checkers = findfile('.eslintrc.js', 
 " Ruby autocompletion settings
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+" autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby compiler ruby
 
 set tags=./tags;
@@ -231,7 +232,7 @@ command! W call CustomStripWhitespace()
 " Open up the netrw explorer if the key is pressed
 noremap <leader>e :NERDTreeToggle<CR>
 noremap <leader>w :NERDTreeFind<CR>
-autocmd vimenter * NERDTree
+let NERDTreeQuitOnOpen=1
 
 " For the sake of learning to get rid of bad habits
 noremap <Up> <NOP>
