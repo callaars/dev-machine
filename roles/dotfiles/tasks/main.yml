@@ -73,7 +73,8 @@
       google: "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
       irb: "irb --simple-prompt"
       "git-add-no-whitespace": "git diff -w --no-color | git apply --cached --ignore-whitespace && git checkout -- . && git reset && git add -p"
-
+      squash: "git rebase -i `git log master..HEAD --first-parent --oneline --pretty=format:"%h" --no-patch | tail -n 1`~1"
+      
 - name: Empty existing tmux config
   copy:
     content: ""
