@@ -332,13 +332,7 @@ let g:badwolf_html_link_underline = 1
 let g:netrw_keepdir      = 0
 let g:netrw_liststyle    = 3
 
-" vim-mocha configuration
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-
-let g:mocha_js_command = "!ava {spec}"
-"let g:mocha_js_command = "!mocha --no-colors --compilers js:babel-register {spec}"
-let g:mocha_coffee_command = "!mocha --no-colors -b --compilers coffee:coffee-script/register --timeout 8000 --require coffee-script/register --check-leaks {spec}"
+map <Leader>p :call CtrlPClearAllCaches()<CR>
 
 " Easier window navigation
 nnoremap <C-J> <C-W><C-J>
