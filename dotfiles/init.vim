@@ -199,7 +199,7 @@ let g:syntastic_javascript_checkers = []
 autocmd FileType javascript let b:syntastic_checkers = findfile('.eslintrc.js', '.;') !=# '' ? ['eslint'] : ['standard']
 
 " Ruby autocompletion settings
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby compiler ruby
@@ -332,7 +332,7 @@ let g:badwolf_html_link_underline = 1
 let g:netrw_keepdir      = 0
 let g:netrw_liststyle    = 3
 
-map <Leader>p :call CtrlPClearAllCaches()<CR>
+map <Leader>p :CtrlPClearAllCaches<CR>
 
 " Easier window navigation
 nnoremap <C-J> <C-W><C-J>
