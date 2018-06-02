@@ -167,11 +167,6 @@ Plugin 'Gummybears'
 
 " Plugin 'fatih/vim-go'
 
-" Ruby
-Plugin 'tpope/vim-rbenv'
-Plugin 'tpope/vim-rails'
-Plugin 'vim-ruby/vim-ruby'
-
 " Enable JSX as well for the js files
 let g:jsx_ext_required = 0
 
@@ -197,14 +192,6 @@ let g:syntastic_typescript_tsc_fname = ''
 
 let g:syntastic_javascript_checkers = []
 autocmd FileType javascript let b:syntastic_checkers = findfile('.eslintrc.js', '.;') !=# '' ? ['eslint'] : ['standard']
-
-" Ruby autocompletion settings
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-" autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby compiler ruby
-
-set tags=./tags;
 
 " Syntax highlighting
 syntax on
