@@ -4,8 +4,6 @@
   vars:
     home: "/Users/{{ lookup('env', 'USER') }}"
     user: "{{ lookup('env', 'USER' )}}"
-    default_ruby: "{{ lookup('env', 'ANSIBLE_DEFAULT_RUBY') }}"
-    node_version: "{{ lookup('env', 'ANSIBLE_DEFAULT_NODE') }}"
     ssh_private_key: "{{ lookup('env', 'ANSIBLE_SSH_PRIVATE_KEY') }}"
     ssh_public_key:  "{{ lookup('env', 'ANSIBLE_SSH_PUBLIC_KEY') }}"
     gpg_private_key: "{{ lookup('env', 'ANSIBLE_GPG_PRIVATE_KEY') }}"
@@ -17,10 +15,4 @@
     - dev
     - gpg
     - ssh
-    - role: nvm
-      nvm: 
-        user: "{{ user }}"
-        version: HEAD
-        node_version: 8
-    - node
     - dotfiles

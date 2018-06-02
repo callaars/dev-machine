@@ -1,0 +1,7 @@
+---
+
+- hosts: localhost
+  vars:
+    default_ruby: "2.5.0"
+  roles:
+    - ruby

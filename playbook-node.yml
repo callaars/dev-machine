@@ -1,0 +1,12 @@
+---
+
+- hosts: localhost
+  vars:
+    node_version: "9"
+  roles:
+    - role: nvm
+      nvm: 
+        user: "joseph"
+        version: HEAD
+        node_version: 9
+    - node

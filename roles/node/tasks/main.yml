@@ -7,13 +7,6 @@
     create=yes
   tags: nvm
 
-- name: Install {{ node_version }}
-  command: bash -c 'source ~/.nvm/nvm.sh; {{ item }} '
-  with_items:
-    - nvm install {{ node_version }}
-    - nvm alias default {{ node_version }}
-  tags: nvm
-
 - name: Install NPM packages
   npm: name={{ item }} state=present global=yes
   with_items:
