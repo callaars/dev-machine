@@ -6,7 +6,6 @@
   with_dict: "{{ aliases }}"
   vars:
     aliases:
-      ruby: "{{ default_ruby }}"
       node: "{{ node_version }}"
       ssh_private: "{{ ssh_private_key }}"
       ssh_public: "{{ ssh_public_key }}"

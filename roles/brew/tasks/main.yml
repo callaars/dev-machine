@@ -16,24 +16,15 @@
     - tree
     - python2
     - speedtest_cli
-    - neovim
-    - tmux
     - gnupg
     - pinentry-mac
     - antigen
     - heroku
     - exa
-    - docker
-    - docker-compose
     - postgresql
     - redis
-    - phantomjs
-    - ghostscript
-    - ctags
     - neovim
     - awscli
-    - rbenv
-    - zeromq
 
 - name: Install packages from Homebrew Cask
   ignore_errors: yes
@@ -43,7 +34,6 @@
     - iterm2
     - private-internet-access
     - vlc
-    - vlc-webplugin
     - slack
     - flux
     - karabiner-elements

@@ -54,29 +54,20 @@
   vars:
     aliases:
       findinfiles: "grep --exclude-dir={node_modules,.git,dist,build} -irn \".\" -e"
-      docker_clean_images: 'docker rmi \$(docker images -a --filter=dangling=true -q) --force'
-      docker_clean_containers: 'docker rm -v \$(docker ps -a -q -f status=exited)'
-      docker_clean_volumes: 'docker volume rm \$(docker volume ls -qf dangling=true)'
-      docker_clean: docker_clean_images; docker_clean_containers; docker_clean_volumes
       ip: "curl icanhazip.com"
       ls: "exa -abghl -L 3 --group-directories-first"
       l: "ls"
-      start_redis: "redis-server /usr/local/etc/redis.conf"
-      start_postgresql: "pg_ctl -D /usr/local/var/postgres start"
-      stop_postgresql: "pg_ctl -D /usr/local/var/postgres stop"
+      start-redis: "redis-server /usr/local/etc/redis.conf"
+      start-postgresql: "pg_ctl -D /usr/local/var/postgres start"
+      stop-postgresql: "pg_ctl -D /usr/local/var/postgres stop"
       clean: "git clean -fxd"
-      ctags: "`brew --prefix`/bin/ctags"
-      add_ctags: "ctags -R --exclude=.git --exclude=node_modules --exclude=log *"
       "..": "cd .."
       "...": "cd ..; cd .."
       "....": "cd ..; cd ..; cd .."
       google: "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-      irb: "irb --simple-prompt"
-      "git-add-no-whitespace": "git diff -w --no-color | git apply --cached --ignore-whitespace && git checkout -- . && git reset && git add -p"
       squash: "git rebase -i `git log master..HEAD --first-parent --oneline --pretty=format:"%h" --no-patch | tail -n 1`~1"
       "rspec-watch": "nodemon -x \"bundle exec spring rspec $1\" -w \"$1\""
 
-      
 - name: Empty existing tmux config
   copy:
     content: ""
