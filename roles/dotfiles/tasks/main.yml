@@ -29,12 +29,6 @@
     - 'COMPLETION_WAITING_DOTS="true"'
     - 'eval "$(rbenv init -)"'
 
-- name: Make sure PIP is installed
-  become: true
-  become_user: "root"
-  easy_install: name=pip state=latest
-  ignore_errors: yes
-
 - name: Create aliases
   lineinfile: dest=~/.zshrc line='alias {{ item.key }}=\"{{ item.value }}\"'
   with_dict: "{{ aliases }}"

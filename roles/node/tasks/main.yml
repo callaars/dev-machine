@@ -10,19 +10,7 @@
     create=yes
 
 - name: Install Node {{ node_version }}
-  command: nvm install {{ node_version }}
-  register: nvm_install_result
-  changed_when: "'is already installed.' not in nvm_install_result.stdout"
-
-- name: Check if {{ node_version }} is the default node version
-  shell: nvm ls | grep -e 'default -> {{ node_version }}'
-  register: nvm_check_default
-  changed_when: False
-  ignore_errors: True
-
-- name: Set default node version to {{ node_version }}
-  command: nvm alias default {{ node_version }}
-  when: nvm_check_default|failed
+  shell: source ~/.nvm/nvm.sh && nvm install {{ node_version }} && nvm alias default {{ node_version }}
 
 - name: Install NPM packages
   npm: name={{ item }} state=present global=yes

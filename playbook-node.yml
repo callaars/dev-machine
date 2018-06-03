@@ -6,7 +6,3 @@
   user: "{{ lookup('env', 'USER' )}}"
   roles:
     - node
-      nvm:
-        user: "{{ lookup('env', 'USER' )}}"
-        version: HEAD
-        node_version: 9
