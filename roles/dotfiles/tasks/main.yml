@@ -35,19 +35,6 @@
   easy_install: name=pip state=latest
   ignore_errors: yes
 
-- name: Prepare Neovim directories
-  file: path=~/.config/nvim/bundle state=directory
-
-- name: Copy Neovim configuration
-  copy:
-    src: "{{ playbook_dir }}/dotfiles/init.vim"
-    dest: ~/.config/nvim/init.vim
-
-- name: Install Vundle for Neovim
-  git:
-    repo: 'https://github.com/VundleVim/Vundle.vim.git'
-    dest: ~/.config/nvim/bundle/Vundle.vim
-
 - name: Create aliases
   lineinfile: dest=~/.zshrc line='alias {{ item.key }}=\"{{ item.value }}\"'
   with_dict: "{{ aliases }}"
@@ -84,9 +71,3 @@
     - 'unbind C-b'
     - 'set -g prefix C-a'
     - 'bind C-a send-prefix'
-
-- name: Create gpg-agent config
-  copy:
-    dest: ~/.gnupg/gpg-agent.conf
-    content: "pinentry-program /usr/local/bin/pinentry-mac"
-    force: true

@@ -6,7 +6,6 @@
   with_dict: "{{ aliases }}"
   vars:
     aliases:
-      node: "{{ node_version }}"
       ssh_private: "{{ ssh_private_key }}"
       ssh_public: "{{ ssh_public_key }}"
       gpg_public: "{{ gpg_public_key }}"

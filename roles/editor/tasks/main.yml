@@ -1,0 +1,41 @@
+---
+
+- name: Install Visual Studio Code extensions
+  command: code --install-extension {{ item }}
+  with_items:
+    - Hridoy.rails-snippets
+    - Lourenci.go-to-spec
+    - Orta.vscode-jest
+    - bajdzis.vscode-database
+    - bierner.markdown-preview-github-styles
+    - christian-kohler.npm-intellisense
+    - eamodio.gitlens
+    - eg2.tslint
+    - karunamurti.haml
+    - misogi.ruby-rubocop
+    - mrmlnc.vscode-scss
+    - noku.rails-run-spec-vscode
+    - rbbit.typescript-hero
+    - rebornix.Ruby
+    - vscodevim.vim
+
+- name: Copy Visual Studio Code configurations
+  copy:
+    src: "{{ playbook_dir }}/dotfiles/vscode/{{ item }}"
+    dest: "~/Library/Application\ Support/Code/User/{{ item }}"
+  with_items:
+    - keybindings.json
+    - settings.json
+
+- name: Prepare Neovim directories
+  file: path=~/.config/nvim/bundle state=directory
+
+- name: Copy Neovim configuration
+  copy:
+    src: "{{ playbook_dir }}/dotfiles/init.vim"
+    dest: ~/.config/nvim/init.vim
+
+- name: Install Vundle for Neovim
+  git:
+    repo: 'https://github.com/VundleVim/Vundle.vim.git'
+    dest: ~/.config/nvim/bundle/Vundle.vim

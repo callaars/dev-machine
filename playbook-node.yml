@@ -3,10 +3,10 @@
 - hosts: localhost
   vars:
     node_version: "9"
+  user: "{{ lookup('env', 'USER' )}}"
   roles:
-    - role: nvm
-      nvm: 
-        user: "joseph"
+    - node
+      nvm:
+        user: "{{ lookup('env', 'USER' )}}"
         version: HEAD
         node_version: 9
-    - node

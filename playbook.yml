@@ -12,7 +12,8 @@
   roles:
     - check
     - brew
-    - dev
+    - git
+    - editor
     - gpg
     - ssh
     - dotfiles

@@ -1,0 +1,22 @@
+// When updating this file, also update the dev-machine repository!
+{
+    "workbench.statusBar.feedback.visible": false,
+    "vim.easymotion": true,
+    "vim.leader": ",",
+    "vim.useSystemClipboard": true,
+    "git.autofetch": true,
+    "files.trimTrailingWhitespace": true,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "ruby.codeCompletion": "rcodetools",
+    "ruby.format": "rubocop",
+    "ruby.intellisense": "rubyLocate",
+    "files.autoSave": "off",
+    "typescriptHero.imports.organizeOnSave": true,
+    "typescriptHero.imports.stringQuoteStyle": "\"",
+    "ruby.specFocusTerminal": false,
+    "gitlens.historyExplorer.enabled": true,
+    "extensions.ignoreRecommendations": true,
+    "editor.minimap.enabled": false
+}

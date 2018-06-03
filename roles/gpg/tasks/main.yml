@@ -7,6 +7,12 @@
     owner: "{{ user }}"
     mode: 0700
 
+- name: Create gpg-agent config
+  copy:
+    dest: ~/.gnupg/gpg-agent.conf
+    content: "pinentry-program /usr/local/bin/pinentry-mac"
+    force: true
+
 - name: GPG create temporary files
   copy:
     content: "{{ item.content }}"
@@ -16,7 +22,7 @@
   with_items:
     - { name: pub, content: "{{ gpg_public_key }}"}
     - { name: priv, content: "{{ gpg_private_key }}"}
-  
+
 - name: GPG import private key
   command: "gpg --import {{ home }}/.gnupg/priv.key"
   args:

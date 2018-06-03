@@ -1,4 +1,3 @@
 #!/bin/bash
 
-ansible-galaxy install rvm_io.ruby
-ansible-playbook ./playbook.yml
+ansible-galaxy install -r requirements.yml --ignore-errors

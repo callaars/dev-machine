@@ -1,11 +1,28 @@
 ---
 
-- name: source nvm in ~/.zprofile
+- name: Install nvm
+  git: repo=https://github.com/creationix/nvm.git dest=~/.nvm version=HEAD
+
+- name: Source nvm in ~/.zprofile
   lineinfile: >
     dest=~/.zprofile
     line="source ~/.nvm/nvm.sh"
     create=yes
-  tags: nvm
+
+- name: Install Node {{ node_version }}
+  command: nvm install {{ node_version }}
+  register: nvm_install_result
+  changed_when: "'is already installed.' not in nvm_install_result.stdout"
+
+- name: Check if {{ node_version }} is the default node version
+  shell: nvm ls | grep -e 'default -> {{ node_version }}'
+  register: nvm_check_default
+  changed_when: False
+  ignore_errors: True
+
+- name: Set default node version to {{ node_version }}
+  command: nvm alias default {{ node_version }}
+  when: nvm_check_default|failed
 
 - name: Install NPM packages
   npm: name={{ item }} state=present global=yes
