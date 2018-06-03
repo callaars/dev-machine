@@ -52,7 +52,7 @@
       "...": "cd ..; cd .."
       "....": "cd ..; cd ..; cd .."
       google: "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-      squash: "git rebase -i `git log master..HEAD --first-parent --oneline --pretty=format:"%h" --no-patch | tail -n 1`~1"
+      squash: 'git rebase -i `git log master..HEAD --first-parent --oneline --pretty=format:"%h" --no-patch | tail -n 1`~1'
       "rspec-watch": "nodemon -x \"bundle exec spring rspec $1\" -w \"$1\""
 
 - name: Empty existing tmux config
