@@ -13,7 +13,7 @@
   shell: source ~/.nvm/nvm.sh && nvm install {{ node_version }} && nvm alias default {{ node_version }}
 
 - name: Install NPM packages
-  npm: name={{ item }} state=present global=yes
+  shell: source ~/.nvm/nvm.sh && npm i -g {{ item }}
   with_items:
     - neovim
     - standard
