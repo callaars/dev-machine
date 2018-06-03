@@ -25,6 +25,7 @@
     - redis
     - neovim
     - awscli
+    - tmux
 
 - name: Install packages from Homebrew Cask
   ignore_errors: yes
