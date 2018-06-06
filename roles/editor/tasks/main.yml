@@ -19,6 +19,12 @@
     - rebornix.Ruby
     - vscodevim.vim
 
+- name: Enable key-repeating
+  command: defaults write {{ item }} -bool false
+  with_items:
+    - com.microsoft.VSCode ApplePressAndHoldEnabled
+    - com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled
+
 - name: Copy Visual Studio Code configurations
   copy:
     src: "{{ playbook_dir }}/dotfiles/vscode/{{ item }}"
