@@ -35,3 +35,6 @@
       require "interactive_editor"
     dest: ~/.irbrc
     force: true
+
+- name: ZSH config
+  lineinfile: dest=~/.zshrc line='eval "$(rbenv init -)"'
