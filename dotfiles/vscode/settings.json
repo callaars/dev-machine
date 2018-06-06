@@ -18,5 +18,7 @@
     "ruby.specFocusTerminal": false,
     "gitlens.historyExplorer.enabled": true,
     "extensions.ignoreRecommendations": true,
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Darcula Operator Mono",
+    "editor.fontFamily": "'Operator Mono', Menlo, Monaco, 'Courier New', monospace",
 }
