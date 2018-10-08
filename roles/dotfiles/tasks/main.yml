@@ -45,6 +45,7 @@
       "...": "cd ..; cd .."
       "....": "cd ..; cd ..; cd .."
       google: "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+      git-archive: "git archive -o archive.zip HEAD $(git diff --name-only HEAD^)"
 
 - name: Empty existing tmux config
   copy:
