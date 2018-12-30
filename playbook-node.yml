@@ -2,7 +2,7 @@
 
 - hosts: localhost
   vars:
-    node_version: "9"
+    node_version: "11"
   user: "{{ lookup('env', 'USER' )}}"
   roles:
     - node

@@ -22,9 +22,7 @@
     - heroku
     - exa
     - postgresql
-    - redis
     - neovim
-    - awscli
     - tmux
 
 - name: Install packages from Homebrew Cask
@@ -32,16 +30,17 @@
   homebrew_cask: name={{ item }} state=present
   with_items:
     - google-chrome
+    - firefox
     - iterm2
-    - private-internet-access
     - vlc
     - slack
-    - flux
     - karabiner-elements
-    - kap
     - whatsapp
-    - pgadmin4
     - visual-studio-code
     - lastpass
     - abstract
-    - quicklook-csv
+    - tunnelblick
+    - little-snitch
+    - thunderbird
+    - noti
+    - transmission

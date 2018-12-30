@@ -21,3 +21,4 @@
     - typescript
     - tslint
     - source-map-explorer
+    - yarn

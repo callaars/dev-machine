@@ -3,21 +3,25 @@
 - name: Install Visual Studio Code extensions
   command: code --install-extension {{ item }}
   with_items:
-    - Hridoy.rails-snippets
-    - Lourenci.go-to-spec
-    - Orta.vscode-jest
-    - bajdzis.vscode-database
-    - bierner.markdown-preview-github-styles
-    - christian-kohler.npm-intellisense
-    - eamodio.gitlens
-    - eg2.tslint
+    - formulahendry.auto-close-tag
     - karunamurti.haml
+    - kamasamak.vscode-cfml
+    - marcochavezf.darcula-operator-mono-vscode
+    - peterjausovec.vscode-docker
+    - eamodio.gitlens
+    - orta.vscode-jest
+    - christian-kohler.npm-intellisense
+    - ckolkman.vscode-postgres
+    - esbenp.prettier-vscode
+    - rebornix.ruby
+    - vayan.haml
+    - castwide.solargraph
     - misogi.ruby-rubocop
-    - mrmlnc.vscode-scss
-    - noku.rails-run-spec-vscode
+    - ms-mssql.mssql
+    - eg2.tslint
     - rbbit.typescript-hero
-    - rebornix.Ruby
     - vscodevim.vim
+    - jpoissonnier.vscode-styled-components
 
 - name: Enable key-repeating
   command: defaults write {{ item }} -bool false
