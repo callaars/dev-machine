@@ -1,15 +1,15 @@
 ---
 - name: Update brew daily
   cron: name="brew autoupdate" special_time="daily"
-        job="/usr/local/bin/brew update"
+    job="/usr/local/bin/brew update"
 
 - name: Cleanup brew
   cron: name="brew cleanup" special_time="monthly"
-        job="/usr/local/bin/brew cleanup"
+    job="/usr/local/bin/brew cleanup"
 
 - name: Cleanup brew cask
   cron: name="brew cask cleanup" special_time="monthly"
-        job="/usr/local/bin/brew cask cleanup"
+    job="/usr/local/bin/brew cask cleanup"
 
 - name: Install cask
   command: brew tap caskroom/cask
@@ -23,7 +23,6 @@
     - gnupg
     - pinentry-mac
     - antigen
-    - heroku
     - exa
     - postgresql
     - neovim
@@ -41,7 +40,6 @@
     - karabiner-elements
     - whatsapp
     - visual-studio-code
-    - lastpass
     - abstract
     - tunnelblick
     - little-snitch
@@ -49,3 +47,4 @@
     - noti
     - transmission
     - zoomus
+    - docker
