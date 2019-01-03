@@ -22,6 +22,7 @@
     - speedtest_cli
     - gnupg
     - pinentry-mac
+    - heroku/brew/heroku
     - antigen
     - exa
     - postgresql
