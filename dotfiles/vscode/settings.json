@@ -14,8 +14,6 @@
   "ruby.intellisense": "rubyLocate",
   "files.autoSave": "onWindowChange",
   "typescriptHero.imports.organizeOnSave": true,
-  "typescriptHero.imports.stringQuoteStyle": "\"",
-  "gitlens.historyExplorer.enabled": true,
   "extensions.ignoreRecommendations": true,
   "editor.minimap.enabled": false,
   "workbench.colorTheme": "Darcula Operator Mono",
@@ -115,5 +113,10 @@
   "editor.formatOnSave": true,
   "breadcrumbs.enabled": true,
   "gitlens.views.fileHistory.enabled": true,
-  "gitlens.views.lineHistory.enabled": true
+  "gitlens.views.lineHistory.enabled": true,
+  "go.autocompleteUnimportedPackages": true,
+  "go.testOnSave": true,
+  "go.useLanguageServer": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescriptHero.imports.insertSemicolons": false
 }

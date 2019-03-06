@@ -18,7 +18,6 @@
   homebrew: name={{ item }} state=present
   with_items:
     - tree
-    - python2
     - speedtest_cli
     - gnupg
     - pinentry-mac
@@ -44,6 +43,7 @@
     - abstract
     - tunnelblick
     - little-snitch
+    - micro-snitch
     - thunderbird
     - noti
     - transmission

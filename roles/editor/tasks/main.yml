@@ -1,24 +1,22 @@
 ---
-
 - name: Install Visual Studio Code extensions
   command: code --install-extension {{ item }}
   with_items:
+    - apollographql.vscode-apollo
     - formulahendry.auto-close-tag
     - karunamurti.haml
-    - kamasamak.vscode-cfml
     - marcochavezf.darcula-operator-mono-vscode
     - peterjausovec.vscode-docker
+    - dbaeumer.vscode-eslint
     - eamodio.gitlens
+    - ms-vscode.go
     - orta.vscode-jest
     - christian-kohler.npm-intellisense
     - ckolkman.vscode-postgres
     - esbenp.prettier-vscode
     - rebornix.ruby
     - vayan.haml
-    - castwide.solargraph
     - misogi.ruby-rubocop
-    - ms-mssql.mssql
-    - eg2.tslint
     - rbbit.typescript-hero
     - vscodevim.vim
     - jpoissonnier.vscode-styled-components
@@ -47,5 +45,5 @@
 
 - name: Install Vundle for Neovim
   git:
-    repo: 'https://github.com/VundleVim/Vundle.vim.git'
+    repo: "https://github.com/VundleVim/Vundle.vim.git"
     dest: ~/.config/nvim/bundle/Vundle.vim
