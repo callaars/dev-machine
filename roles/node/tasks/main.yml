@@ -15,8 +15,8 @@
 - name: Install NPM packages
   shell: source ~/.nvm/nvm.sh && npm i -g {{ item }}
   with_items:
-    - neovim
     - standard
+    - appcenter
     - nodemon
     - typescript
     - tslint

@@ -21,12 +21,11 @@
     - speedtest_cli
     - gnupg
     - pinentry-mac
-    - heroku/brew/heroku
     - antigen
-    - exa
     - postgresql
-    - neovim
-    - tmux
+    - sdl2
+    - sdl2_gfx
+    - sdl2_image
 
 - name: Install packages from Homebrew Cask
   ignore_errors: yes
@@ -39,13 +38,16 @@
     - slack
     - karabiner-elements
     - whatsapp
-    - visual-studio-code
-    - abstract
     - tunnelblick
     - little-snitch
     - micro-snitch
-    - thunderbird
-    - noti
-    - transmission
     - zoomus
+    - qbittorrent
     - docker
+    - mullvadvpn
+    - notion
+    - tor-browser
+    - libreoffice
+    - mega
+    - keybase
+    - robo-3t

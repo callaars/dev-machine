@@ -10,8 +10,6 @@
 - name: ZSH config
   lineinfile: dest=~/.zshrc line='{{ item }}'
   with_items:
-    - "HISTFILE=/dev/null"
-    - 'export PATH="/usr/local/opt/python@2/bin:$PATH"'
     - "ZSH_TMUX_AUTOSTART=true"
     - "ZSH_TMUX_AUTOQUIT=false"
     - "source $(brew --prefix)/share/antigen/antigen.zsh"
@@ -20,11 +18,10 @@
     - "antigen theme refined"
     - "antigen bundle git"
     - "antigen bundle docker"
-    - "antigen bundle tmux"
     - "antigen bundle vi-mode"
     - "antigen bundle urltools"
     - "antigen apply"
-    - "export EDITOR=nvim"
+    - "export EDITOR=vim"
     - 'COMPLETION_WAITING_DOTS="true"'
 
 - name: Create aliases
@@ -33,34 +30,15 @@
   vars:
     aliases:
       findinfiles: 'grep --exclude-dir={node_modules,.git,dist,build} -irn "." -e'
-      ip: "curl icanhazip.com"
-      ls: "exa -abghl -L 3 --group-directories-first"
-      l: "ls"
-      start-redis: "redis-server /usr/local/etc/redis.conf"
-      start-postgresql: "pg_ctl -D /usr/local/var/postgres start"
-      stop-postgresql: "pg_ctl -D /usr/local/var/postgres stop"
-      clean: "git clean -fxd"
+      ip: "curl https://am.i.mullvad.net/connected"
+      l: "ls -al"
       "..": "cd .."
       "...": "cd ..; cd .."
-      "....": "cd ..; cd ..; cd .."
+      "hide": "defaults write com.apple.finder CreateDesktop false; killall Finder;"
+      "show": "defaults write com.apple.finder CreateDesktop true; killall Finder;"
+      "mobile-api": "cd ~/Projects/Sunsama/mobile/sunsama-mobile-api/; yarn start"
+      "meteor-lite": "cd ~/Projects/Sunsama/meteor/; make start-lite"
       git-archive: "git archive -o archive.zip HEAD $(git diff --name-only HEAD^)"
-
-- name: Empty existing tmux config
-  copy:
-    content: ""
-    dest: ~/.tmux.conf
-    force: true
-
-- name: Create tmux config
-  lineinfile: dest=~/.tmux.conf line='{{ item }}'
-  with_items:
-    - "set -g status off"
-    - "set-window-option -g mode-keys vi"
-    - 'set -ga terminal-overrides ",st-256color:Tc"'
-    - "set -s escape-time 0"
-    - "unbind C-b"
-    - "set -g prefix C-a"
-    - "bind C-a send-prefix"
 
 - name: Disable thumbnail generation
   command: qlmanage -r {{ item }}

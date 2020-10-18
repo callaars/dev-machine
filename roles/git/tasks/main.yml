@@ -10,7 +10,7 @@
     - { name: 'core.editor', value: 'nvim' }
     - { name: 'core.whitespace', value: 'fix,-indent-with-non-tab,trailing-space,cr-at-eol' }
     - { name: 'core.excludesfile', value: '.gitignore' }
-    - { name: 'web.browser', value: 'chrome' }
-    - { name: 'browser.chrome.path', value: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' }
-    - { name: 'push.default', value: 'nothing' }
+    - { name: 'push.default', value: 'simple' }
     - { name: 'color.ui', value: 'auto' }
+    - { name: 'alias.set-upstream', value: '!git branch -u origin/`git symbolic-ref --short HEAD`' }
+    - { name: 'alias.recent-branch', value: '!git branch --sort=-committerdate' }

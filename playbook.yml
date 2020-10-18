@@ -13,7 +13,6 @@
     - check
     - brew
     - git
-    - editor
     - gpg
     - ssh
     - dotfiles
