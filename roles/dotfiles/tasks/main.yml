@@ -44,7 +44,6 @@
   command: qlmanage -r {{ item }}
   with_items:
     - cache
-    - disablecache
 
 - name: Nuke QuickLook thumbnail cache
   command: rm -rf $TMPDIR/../C/com.apple.QuickLook.thumbnailcache

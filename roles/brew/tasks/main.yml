@@ -12,7 +12,7 @@
     job="/usr/local/bin/brew cask cleanup"
 
 - name: Install cask
-  command: brew tap caskroom/cask
+  command: brew tap homebrew/cask
 
 - name: Install packages from Homebrew
   homebrew: name={{ item }} state=present
@@ -60,3 +60,4 @@
     - plex
     - steam
     - 1password
+    - jetbrains-toolbox
