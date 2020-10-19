@@ -26,6 +26,7 @@
     - sdl2
     - sdl2_gfx
     - sdl2_image
+    - gh
 
 - name: Install packages from Homebrew Cask
   ignore_errors: yes
