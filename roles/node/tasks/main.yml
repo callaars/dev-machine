@@ -15,11 +15,10 @@
 - name: Install NPM packages
   shell: source ~/.nvm/nvm.sh && npm i -g {{ item }}
   with_items:
-    - standard
-    - appcenter
-    - nodemon
+    - appcenter-cli
     - typescript
     - tslint
     - source-map-explorer
     - yarn
     - vercel
+    - sentry-cli
